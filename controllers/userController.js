@@ -58,8 +58,8 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     );
   }
   // 2) Filtered out fields names that are not allowed to be updated
-  console.log(req.file);
-  console.log(req.body);
+  // console.log(req.file);
+  // console.log(req.body);
   const filterBody = filterObj(
     req.body,
     "firstname",

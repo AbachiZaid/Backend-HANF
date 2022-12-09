@@ -68,8 +68,8 @@ exports.getAllPosts = catchAsync(async (req, res, next) => {
 });
 
 exports.createPost = catchAsync(async (req, res, next) => {
-  console.log(req.file);
-  console.log(req.body);
+  // console.log(req.file);
+  // console.log(req.body);
   if (req.file) req.body.image = req.file.path;
 
   // Allow nested routes
@@ -103,8 +103,8 @@ exports.getPost = catchAsync(async (req, res, next) => {
 });
 
 exports.updatePost = catchAsync(async (req, res, next) => {
-  console.log(req.file);
-  console.log(req.body);
+  // console.log(req.file);
+  // console.log(req.body);
   if (req.file) req.body.image = req.file.path;
   const post = await Post.findByIdAndUpdate(req.params.id, req.body, {
     new: true,

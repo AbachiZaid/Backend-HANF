@@ -89,8 +89,8 @@ exports.createArt = catchAsync(async (req, res, next) => {
   if (req.files) req.body.audio = req.files.audio[0].path;
   if (req.files) req.body.image = req.files.image[0].path;
 
-  console.log(req.file);
-  console.log(req.body);
+  // console.log(req.file);
+  // console.log(req.body);
 
   const art = await Art.create(req.body);
   res.status(200).json({

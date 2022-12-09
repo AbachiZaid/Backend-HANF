@@ -16,6 +16,7 @@ const postRouter = require("./routes/postRoutes");
 const artRouter = require("./routes/artRoutes");
 const eventRouter = require("./routes/eventRoutes");
 const commentRouter = require("./routes/commentRoutes");
+const compression = require("compression");
 
 // Start express app
 const app = express();
@@ -81,6 +82,8 @@ app.use(
     whitelist: ["title", "price", "createdAt", "description", "post"],
   })
 );
+
+app.use(compression());
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
